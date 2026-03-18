@@ -1,0 +1,40 @@
+{
+  "name": "Telegram UserBot Creator",
+  "description": "A Telegram bot that creates and manages userbots",
+  "repository": "https://github.com/yourusername/telegram-userbot-creator",
+  "keywords": ["telegram", "bot", "userbot", "python", "mongodb"],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Your Telegram Bot Token from @BotFather",
+      "required": true
+    },
+    "API_ID": {
+      "description": "Your API ID from my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Your API Hash from my.telegram.org",
+      "required": true
+    },
+    "MONGO_URI": {
+      "description": "MongoDB connection URI (use MongoDB Atlas)",
+      "required": true
+    },
+    "DB_NAME": {
+      "description": "Database name for MongoDB",
+      "value": "userbot_db",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
+}
